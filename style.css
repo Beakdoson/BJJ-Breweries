@@ -1,14 +1,15 @@
 #main_container {
-  width: 100%;
+  width: auto;
   height: 100vh;
   display: flex;
   justify-content: space-between;
 }
-body {
+#editTour_body {
   background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
   background-position: center;
 }
 #card_cotainer {
   width: 100%;
   height: 100vh;
+  position: relative;
 }
