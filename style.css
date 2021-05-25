@@ -13,3 +13,7 @@
   height: 100vh;
   position: relative;
 }
+
+#btn_delete {
+  background-color: red;
+}
