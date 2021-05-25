@@ -1,8 +1,30 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 #main_container {
-  width: auto;
-  height: 100vh;
+  margin: auto;
+  width: 90%;
+
   display: flex;
   justify-content: space-between;
+  background-color: darkgoldenrod;
+}
+
+#tour_container {
+  border: 1px solid black
+}
+
+.saved_tour_outer {
+  margin: auto;
+  width: 70%;
+  height: 220px;
+  border-color: rgb(0, 0, 0);
+  background-color: darkkhaki;
+
 }
 #editTour_body {
   background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
