@@ -1,8 +1,8 @@
 body {
-    background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 #main_container {
@@ -15,11 +15,12 @@ body {
 }
 
 #tour_container {
-  border: 1px solid rgb(155, 139, 2); 
+  border: 1px solid rgb(155, 139, 2);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+  border: 1px solid black;
 }
 
 .saved_tour_outer {
@@ -31,16 +32,18 @@ body {
   border-radius: 5px;
   background-color: rgb(206, 203, 162);
 
+  border-color: rgb(0, 0, 0);
+  background-color: darkkhaki;
 }
 .tour_name {
   height: 20%;
   width: 100%;
 }
-.tour_body{
+.tour_body {
   height: 60%;
   width: 100%;
 }
-.tour_buttons{
+.tour_buttons {
   height: 20%;
   width: 100%;
 }
@@ -48,18 +51,34 @@ body {
   background-color: rgb(206, 203, 162);
 }
 #title {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 #editTour_body {
   background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
   background-position: center;
 }
 #card_cotainer {
-  width: 100%;
+  width: 18rem;
   height: 100vh;
   position: relative;
+}
+.card-body {
+  height: 50vh;
+  width: 18rem;
+  border: 2px solid brown;
+  border: auto;
 }
 
 #btn_delete {
   background-color: red;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 0fr 0fr 0fr;
+  grid-template-rows: 0fr 0fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . .";
 }
