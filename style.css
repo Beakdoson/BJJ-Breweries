@@ -1,8 +1,8 @@
 body {
-    background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 #main_container {
@@ -15,7 +15,7 @@ body {
 }
 
 #tour_container {
-  border: 1px solid black
+  border: 1px solid black;
 }
 
 .saved_tour_outer {
@@ -24,18 +24,33 @@ body {
   height: 220px;
   border-color: rgb(0, 0, 0);
   background-color: darkkhaki;
-
 }
 #editTour_body {
   background-image: url("https://images.unsplash.com/photo-1559818454-1b46997bfe30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80");
   background-position: center;
 }
 #card_cotainer {
-  width: 100%;
+  width: 18rem;
   height: 100vh;
   position: relative;
+}
+.card-body {
+  height: 50vh;
+  width: 18rem;
+  border: 2px solid brown;
+  border: auto;
 }
 
 #btn_delete {
   background-color: red;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 0fr 0fr 0fr;
+  grid-template-rows: 0fr 0fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . .";
 }
