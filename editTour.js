@@ -24,44 +24,34 @@ function fetchToursList(savedToursList) {
   }
 }
 
-// creating a server for web app to contact backend database
-app.listen(3000, function () {
-  console.log(`Listening on 3000`);
-});
+// obj to get the query string into from savedTours.html
+let savedListUrl = new URL("");
 
-// get function to receive list of breweries
+window.onload = function () {
+  try {
+    let url_string = window.location.href.toLowerCase();
+    let savedListUrl = new URL(url_string);
+    let _id = url.searchParams.get(`${_id}`);
+    let name = url.searchParams.get(`${name}`);
+    let brewers = url.searchParams.get(`${breweries}`);
+    console.log(`${savedListUrl}`);
+  } catch (err) {
+    console.log("Unable to to grab tour list");
+  }
+};
 
-// // function to capture button clicks for edit and delete
-// document.getElementById("btn_add").addEventListener("click", (addTourCard) => {
-//   // prevent default action of the webpage
-//   addTourCard.preventDefault();
-//   // object to capture click event
-//   let addBtn = addTourCard.target;
+async function editTourCard(tours) {
+  const { _id, name, breweries } = tours;
+}
 
-//   // console log tour added
-//   console.log("Tour has been added");
-
-//   // create p tag to append new tour added
-//   const newTour = document.getElementById("new_tour");
-
-//   // creates new p tag for card if customer adds tour
-//   newTour.innerHTML += `
-//   <p>Did this work?</p>
-//   <button type"button">Add</button>
-//   `;
-
-//   //   document.getElementById("btn_add").appendChild(newTour);
-// });
-// document
-//   .getElementById("btn_delete")
-//   .addEventListener("click", (deleteTourCard) => {
-//     // prevent the default action of webpage
-//     deleteTourCard.preventDefault();
-//     // capture event of the webpage
-//     let deleteBtn = deleteTourCard.target();
-
-//     // deletes new_tour p tag
-//     const delTour = document.getElementById("new_tour");
-
-//     delTour.innerHTML -= `<p>${newTour}</p>`;
-//   });
+let editCard = document.createElement("div");
+editCard.setAttribute("class", "saved_tour_outer");
+editCard.innerHTML = `
+    <div class="tour_name"><h3 tourname=${_id} id="title">${name}</h3></div>
+    <div class="tour_body">
+    <ul class="list-group list-group-flush" id="brew_list">
+    </div>
+      <div class="tour_buttons">
+        <a href="#" class="btn btn-light" tourID=${_id} id="btn_edit">Edit</a> | <a href="#" tourID=${_id} class="btn btn-dark" id="delete_btn">Delete</a></div>
+    </div>
+  </div>`;
