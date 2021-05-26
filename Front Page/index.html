@@ -16,10 +16,17 @@
   <body>
     <div class="grid-container">
       <div class="Header">
-        <h1>Welcome to Build Your Own Brewery Tour!</h1>
+        <h1>Build Your Own Brewery Tour!</h1>
       </div>
       <div class="Search" id="form_container" >
         <form id="myForm">
+          <input
+          type="text"
+          name="state"
+          id="state"
+          placeholder="State"
+          required
+        />
           <input
             type="text"
             name="city"
@@ -27,14 +34,6 @@
             placeholder="City"
             required
           />
-          <input
-            type="text"
-            name="state"
-            id="state"
-            placeholder="State"
-            required
-          />
-          <input type="submit" value="Search" />
         </form>
       </div>
       <div class="Saved-tours">
