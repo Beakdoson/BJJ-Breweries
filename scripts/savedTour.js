@@ -1,7 +1,7 @@
-const baseURL = `https://bjj-byob.herokuapp.com/list`
+const baseURL = `https://bjj-byob.herokuapp.com`
 const apiBase = `https://api.openbrewerydb.org/breweries?by_name=`
 
-fetch(baseURL)
+fetch(`${baseURL}/list`)
 .then((response) => response.json())
 .then((tourList) => createToursList(tourList));
 
@@ -34,7 +34,7 @@ async function createTourCard(tours){
     <ul class="list-group list-group-flush" id="brew_list${_id}">
     </div>
       <div class="tour_buttons">
-        <a href="#" class="btn btn-light" tourID=${_id} id="btn_edit">Edit</a> | <a href="#" tourID=${_id} class="btn btn-dark" id="delete_btn">Delete</a></div>
+        <a href="editTour.html?=${_id}" class="btn btn-light" tourID=${_id} button="edit" id="btn_edit">Edit Tour</a> | <a href="#" tourID=${_id} class="btn btn-dark" button="delete" id="delete_btn">Delete Tour</a></div>
     </div>
   </div>`
 
@@ -50,7 +50,6 @@ async function createTourCard(tours){
 
     let brewItem = document.createElement("li") 
 
-    
       brewItem.setAttribute("class", "list-group-item tour_group_item")
       brewItem.innerHTML = `<a href='${url}' target='_blank'>${name} - ${street}, ${city}, ${state} </a>`
       document.getElementById(`brew_list${_id}`).appendChild(brewItem)
@@ -60,8 +59,26 @@ async function createTourCard(tours){
 
   tourCard.addEventListener("click", buttonHandler)
 
-
-        function buttonHandler(evt) {
-            console.log(evt.target);
-        }
  }
+
+ function buttonHandler(evt) {
+  const event = evt.target
+  if (event.getAttribute("button") === "delete") {
+      deleteTour(evt)
+  }
+  else if (event.getAttribute("button") === "edit") {
+      // editCard(evt)
+  }
+}
+
+function deleteTour(evt) {
+  const id = evt.target.getAttribute("tourid")
+ 
+  const deleteURL = `${baseURL}/tours/${id}`
+    fetch(deleteURL,{
+        method: "DELETE"
+    })
+    .then(res => {
+    location.reload()
+    })
+}
