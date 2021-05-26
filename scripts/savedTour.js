@@ -29,11 +29,11 @@ async function createTourCard(tours){
     let tourCard = document.createElement("div")
     tourCard.setAttribute("class", "saved_tour_outer")
     tourCard.innerHTML = `
-    <div class="tour_name"><h3 tourname=${_id} id="title">${name}</h3></div>
-    <div class="tour_body">
+    <div class="tour_name tour_inner"><h3 tourname=${_id} id="title">${name}</h3></div>
+    <div class="tour_body tour_inner">
     <ul class="list-group list-group-flush" id="brew_list${_id}">
     </div>
-      <div class="tour_buttons">
+      <div class="tour_buttons tour_inner">
         <a href="editTour.html?=${_id}" class="btn btn-light" tourID=${_id} button="edit" id="btn_edit">Edit Tour</a> | <a href="#" tourID=${_id} class="btn btn-dark" button="delete" id="delete_btn">Delete Tour</a></div>
     </div>
   </div>`
