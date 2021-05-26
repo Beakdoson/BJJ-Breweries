@@ -25,15 +25,14 @@ body {
 
 .saved_tour_outer {
   margin: auto;
-  padding: 5px 5px 5px 5px;
+  margin-top: 10px;
+  padding: 5px 5px 10px 5px;
   width: 70%;
   height: 220px;
   border: 1px solid black;
   border-radius: 5px;
   background-color: rgb(206, 203, 162);
 
-  border-color: rgb(0, 0, 0);
-  background-color: darkkhaki;
 }
 .tour_name {
   height: 20%;
@@ -48,8 +47,15 @@ body {
   width: 100%;
   text-align: end;
 }
+
 .tour_group_item {
   background-color: rgb(206, 203, 162);
+}
+.tour_group_item a:link, a:visited {
+  color: black;
+}
+.tour_group_item a:hover{
+  color: darkgray;
 }
 #title {
   font-family: "Pacifico", cursive;
