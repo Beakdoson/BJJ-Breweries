@@ -1,24 +1,17 @@
 const searchContainer = document.getElementById("list");
-const searchCity = document.getElementById("city");
-const searchState = document.getElementById("state");
+const searchBrewery = document.getElementById("myForm");
 let breweriesList = [];
 
-searchCity.addEventListener("input", (e) => {
+searchBrewery.addEventListener("input", (e) => {
   const searchString = e.target.value.toLowerCase();
   let filteredBreweries = breweriesList.filter((brewery) => {
-    return brewery.city.toLowerCase().includes(searchString);
+    return (
+      brewery.city.toLowerCase().includes(searchString) ||
+      brewery.state.toLowerCase().includes(searchString)
+    );
   });
   displayBreweries(filteredBreweries);
 });
-
-searchState.addEventListener("input", (e) => {
-  const searchString = e.target.value.toLowerCase();
-  let filteredBreweries = breweriesList.filter((brewery) => {
-    return brewery.state.toLowerCase().includes(searchString);
-  });
-  displayBreweries(filteredBreweries);
-});
-
 async function getBreweries() {
   const response = await fetch(`https://api.openbrewerydb.org/breweries`);
   breweriesList = await response.json();
@@ -40,5 +33,5 @@ const displayBreweries = (breweries) => {
           </li>
       `;
   });
-  searchContainer.innerHTML = htmlString;
+  list.innerHTML = htmlString;
 };
