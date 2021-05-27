@@ -9,12 +9,10 @@ body {
   height: 12vh;
   display: flex;
   margin-bottom: 50px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  
+
 }
 .main_style{
-  background-color: rgba(184, 134, 11, .9);
+  background-color: rgba(155, 143, 97, 0.9);
   box-shadow:0px 2px black;
 }
 a:link, a:visited {
@@ -44,7 +42,7 @@ a:hover {
   text-decoration: none;
 }
 .navItem :hover {
-  background-color: darkkhaki;
+  background-color: #ecd68c;
   border-radius: 3px;
   text-decoration: none;
 }
@@ -73,13 +71,11 @@ a:hover {
   align-content: flex-start;
 }
 
-
-
 .saved_tour_outer {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 15px;
-  padding: 5px 5px 10px 5px;
+  padding: 5px 5px 1rem 5px;
   width: 70%;
   height: auto;
   
@@ -142,5 +138,10 @@ a:hover {
     ". . . ."
     ". . . .";
 }
-.header {
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: 17vh;
+  }
 }
+  
