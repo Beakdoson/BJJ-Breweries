@@ -1,8 +1,9 @@
 ///////////////////Logic handling for index/////////////
 let currentList = [];
  //event listener for 'save wishlist button
+ //<div id="submitButton">
 savedList.addEventListener("submit", saveListHandler)
-
+//</div>
 //update event handler with name of card container
 savedList.addEventListener("click", createCurrentList)
 
@@ -21,9 +22,11 @@ function createCurrentList(evt){
   if (breweryCard.getAttribute("state") === "add")
   {
   currentList.push(breweryName)
+  document.getElementById("add_btn").setAttribute("class", "disabled")
   }
   else {
     breweryCard.getElementById("add_btn").setAttribute("state", "add")
+    document.getElementById("add_btn").removeAttribute("class", "disabled")
   }
 }
 
@@ -36,7 +39,7 @@ function postTour(tourName, listArray) {
 
   const putURL = `https://bjj-byob.herokuapp.com/tours`
     fetch(putURL, {
-        method: "PUT",
+        method: "POST",
         body: JSON.stringify(tour),
         headers: {
             'Content-type': 'application/json; charset=UTF-8'
