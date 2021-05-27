@@ -66,9 +66,6 @@ async function createTourCard(tours){
   if (event.getAttribute("button") === "delete") {
       deleteTour(evt)
   }
-  else if (event.getAttribute("button") === "edit") {
-      // editCard(evt)
-  }
 }
 
 function deleteTour(evt) {
