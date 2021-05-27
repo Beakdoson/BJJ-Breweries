@@ -32,6 +32,7 @@ getBreweries().then((response) => {
 
 function breweryCard(breweries) {
   let count = 10;
+
   for (brewery of breweries) {
     if (count > 0) {
       let tourCard = document.createElement("div");
@@ -47,6 +48,7 @@ function breweryCard(breweries) {
         <a href="#" tourID= class="btn btn-dark" button="add" id="add_btn">add to Tour</a></div>
     </div>
   </div>`;
+
       const tourContainer = document.getElementById("tour_container");
       tourContainer.appendChild(tourCard);
       tourCard.addEventListener("click", createCurrentList);
