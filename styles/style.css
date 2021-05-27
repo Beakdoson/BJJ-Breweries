@@ -50,7 +50,12 @@ a:hover {
 #title, h1 {
   font-family: "Pacifico", cursive;
 }
-
+h2 {
+  font-family: "Pacifico", cursive;
+  color: black;
+  border-style: solid;
+  background-color: rgba(184, 134, 11, 0.9);
+}
 #main_container {
   margin: auto;
   width: 90%;
@@ -58,7 +63,24 @@ a:hover {
   justify-content: space-between;
   border-radius: 5px;
 }
-
+#index_main_container {
+  width: 50%;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+}
+.Search {
+  grid-area: 2 / 1 / 3 / 5;
+  color: aquamarine;
+  justify-content: center;
+  text-align: center;
+}
 .title_text {
   margin: auto;
   text-align: center;
@@ -70,7 +92,18 @@ a:hover {
   flex-direction: column;
   align-content: flex-start;
 }
-
+#index_tour_container {
+  width: 50%;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+}
 .saved_tour_outer {
   margin: auto;
   margin-top: 10px;
@@ -111,23 +144,22 @@ a:hover {
 .tour_group_item a:hover{
   color: darkgray;
 }
+.myCard {
+  margin: 10px;
+}
 
-
-#card_cotainer {
+#card_container {
   width: 18rem;
   height: 100vh;
   position: relative;
 }
-.card-body {
+.card_body {
   height: 50vh;
   width: 18rem;
   border: 2px solid brown;
   border: auto;
 }
 
-#btn_delete {
-  background-color: red;
-}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 0fr 0fr 0fr;
