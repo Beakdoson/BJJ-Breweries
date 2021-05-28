@@ -78,17 +78,22 @@ window.onload = async function editBreweyList() {
       editTourCard.setAttribute("class", "saved_tour_outer");
       editTourCard.innerHTML = `
         <div class="tour_name tour_inner">
-        <h3 tourname=${name} id="title">${name}</h3>
+        <h3 breweryname=${name} id="title">${name}</h3>
         </div>
         <div class="tour_body tour_inner" id="${_id}">
+        <label for="street"><b>Street</b></label>
         <p>${street}</p>
+        <label for="city_state"><b>City & State</b></label>
         <p>${city}, ${state}</p>
+        <label for="phone"><b>Phone</b></label>
         <p>${phone}</P>
+        <label for="brewery_type"><b>Brewery Type</b></label>
         <p>${brewery_type}</p>
+        <label for="website"><b>Brewery Website</b></label>
         <a href="${website_url}" target="_blank">${website_url}</a>
         </div>
           <div class="tour_buttons tour_inner">
-            <a href="#" tourID=${_id} class="btn btn-dark" button="delete" id="delete_btn">Delete Tour</a></div>
+            <a href="#" tourID="${_id}" bname="${name}" class="btn btn-dark" button="delete" id="delete_btn">Delete Tour</a></div>
         </div>
       </div>`;
       document.getElementById("tour_container").prepend(editTourCard);
@@ -100,7 +105,39 @@ window.onload = async function editBreweyList() {
   //   console.log("Unable to to grab tour list " + err);
   // }
 };
-function handleClick() {}
+function handleClick(evt) {
+  const event = evt.target;
+  if (event.getAttribute("button") === "delete") {
+    deleteBrewery(evt);
+  }
+}
+
+function deleteBrewery(evt) {
+  const id = evt.target.getAttribute("tourid");
+  const tourName = document.getElementById("brewery_tour").firstChild.data;
+  const deleteBrewery = evt.target.getAttribute("bname");
+  const deleteUrl = `https://bjj-byob.herokuapp.com/tours/remove/${id}`;
+  console.log(id);
+  let putTour = {
+    name: tourName,
+    breweries: deleteBrewery,
+  };
+  console.log(putTour);
+  fetch(deleteUrl, {
+    method: "PUT",
+    body: JSON.stringify(putTour),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => {
+      response.json();
+      console.log("heeeelp");
+    })
+    .then((response) => {
+      location.reload();
+    });
+}
 // async function editTourCard(tours) {
 //   const { name, street, state, city, website_url } = tours;
 // }
