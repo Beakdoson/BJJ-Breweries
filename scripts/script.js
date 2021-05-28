@@ -5,10 +5,11 @@ let currentList = [];
 
 document.getElementById("myForm").addEventListener("input", (e) => {
   const searchString = e.target.value.toLowerCase();
+  console.log(e.target.value.toLowerCase());
   filteredBreweries = breweriesList.filter((brewery) => {
     return (
-      brewery.city.toLowerCase().includes(searchString) ||
-      brewery.state.toLowerCase().includes(searchString)
+      brewery.state.toLowerCase().includes(searchString) ||
+      brewery.city.toLowerCase().includes(searchString)
     );
   });
 });
