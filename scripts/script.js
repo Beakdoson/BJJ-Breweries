@@ -15,10 +15,11 @@ document.getElementById("myForm").addEventListener("input", (e) => {
 
 searchBrewery.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
+    document.getElementById("tour_container").innerHTML = "";
     breweryCard(filteredBreweries);
+    document.forms["myForm"].reset();
   }
 });
-
 async function getBreweries() {
   const response = await fetch(
     `https://api.openbrewerydb.org/breweries/search?query=state&city`
