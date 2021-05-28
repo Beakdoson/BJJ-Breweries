@@ -93,7 +93,7 @@ window.onload = async function editBreweyList() {
         <a href="${website_url}" target="_blank">${website_url}</a>
         </div>
           <div class="tour_buttons tour_inner">
-            <a href="#" tourID="${_id}" class="btn btn-dark" button="delete" id="delete_btn">Delete Tour</a></div>
+            <a href="#" tourID="${_id}" bname="${name}" class="btn btn-dark" button="delete" id="delete_btn">Delete Tour</a></div>
         </div>
       </div>`;
       document.getElementById("tour_container").prepend(editTourCard);
@@ -114,15 +114,15 @@ function handleClick(evt) {
 
 function deleteBrewery(evt) {
   const id = evt.target.getAttribute("tourid");
-  const tourName = document.getElementById("brewery_tour");
-  const deleteBrewery = evt.target.getAttribute("breweryname");
+  const tourName = document.getElementById("brewery_tour").firstChild.data;
+  const deleteBrewery = evt.target.getAttribute("bname");
   const deleteUrl = `https://bjj-byob.herokuapp.com/tours/remove/${id}`;
-
+  console.log(id);
   let putTour = {
     name: tourName,
     breweries: deleteBrewery,
   };
-
+  console.log(putTour);
   fetch(deleteUrl, {
     method: "PUT",
     body: JSON.stringify(putTour),
