@@ -3,9 +3,7 @@ const baseURL = "https://bjj-byob.herokuapp.com";
 const BASEAPI = `https://api.openbrewerydb.org/breweries?by_name=`;
 
 // obj to get the query string into from savedTours.html
-// let urlList = new URL(
-//   "https://bjj-byob.herokuapp.com/id/60ae65599c5ba000150f1972"
-// );
+
 
 // async function to run on loading of editTour.html webpage
 window.onload = async function editBreweyList() {
@@ -59,7 +57,6 @@ window.onload = async function editBreweyList() {
 
   //Function to create each individual brewery and append to tour_body via id=${id}
 
-  function createEditCard(eachApiDataContainer) {}
 
   function createCard(breweries) {
     console.log(breweries);
@@ -100,10 +97,7 @@ window.onload = async function editBreweyList() {
       editTourCard.addEventListener("click", handleClick);
     }
   }
-  // catch error and console log report
-  // } catch (err) {
-  //   console.log("Unable to to grab tour list " + err);
-  // }
+
 };
 function handleClick(evt) {
   const event = evt.target;
@@ -112,44 +106,29 @@ function handleClick(evt) {
   }
 }
 
-function deleteBrewery(evt) {
+async function deleteBrewery(evt) {
   const id = evt.target.getAttribute("tourid");
   const tourName = document.getElementById("brewery_tour").firstChild.data;
   const deleteBrewery = evt.target.getAttribute("bname");
-  const deleteUrl = `https://bjj-byob.herokuapp.com/tours/remove/${id}`;
+  const deleteBreweryArr = []
+  deleteBreweryArr.push(deleteBrewery)
+  const deleteUrl = `https://bjj-byob.herokuapp.com/toursedit/remove/${id}`;
   console.log(id);
   let putTour = {
     name: tourName,
-    breweries: deleteBrewery,
+    breweries: deleteBreweryArr
   };
   console.log(putTour);
-  fetch(deleteUrl, {
+ await fetch(deleteUrl, {
     method: "PUT",
     body: JSON.stringify(putTour),
     headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
+        'Content-type': 'application/json; charset=UTF-8'
+    } 
+})
+.then((response) => {response.json()
+  console.log('heeeelp')})
+.then(response => { 
+  location.reload()
   })
-    .then((response) => {
-      response.json();
-      console.log("heeeelp");
-    })
-    .then((response) => {
-      location.reload();
-    });
 }
-// async function editTourCard(tours) {
-//   const { name, street, state, city, website_url } = tours;
-// }
-
-// let editCard = document.createElement("div");
-// editCard.setAttribute("class", "saved_tour_outer");
-// editCard.innerHTML = `
-//     <div class="tour_name"><h3 tourname=${_id} id="title">${name}</h3></div>
-//     <div class="tour_body">
-//     <ul class="list-group list-group-flush" id="brew_list">
-//     </div>
-//       <div class="tour_buttons">
-//         <a href="#" class="btn btn-light" tourID=${_id} id="btn_edit">Edit</a> | <a href="#" tourID=${_id} class="btn btn-dark" id="delete_btn">Delete</a></div>
-//     </div>
-//   </div>`;
