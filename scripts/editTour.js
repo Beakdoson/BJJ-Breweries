@@ -81,15 +81,15 @@ window.onload = async function editBreweyList() {
         <h3 breweryname=${name} id="title">${name}</h3>
         </div>
         <div class="tour_body tour_inner" id="${_id}">
-        <label for="street">Street</label>
+        <label for="street"><b>Street</b></label>
         <p>${street}</p>
-        <label for="city_state">City & State</label>
+        <label for="city_state"><b>City & State</b></label>
         <p>${city}, ${state}</p>
-        <label for="phone">Phone</label>
+        <label for="phone"><b>Phone</b></label>
         <p>${phone}</P>
-        <label for="brewery_type">Brewery Type</label>
+        <label for="brewery_type"><b>Brewery Type</b></label>
         <p>${brewery_type}</p>
-        <label for="website">Brewery Website</label>
+        <label for="website"><b>Brewery Website</b></label>
         <a href="${website_url}" target="_blank">${website_url}</a>
         </div>
           <div class="tour_buttons tour_inner">
