@@ -66,6 +66,7 @@ h2 {
   padding-top: 5px;
   padding-left: 5px;
   display: block;
+  font-family: "Pacifico", cursive;
 }
 #main_container {
   margin: auto;
@@ -182,11 +183,6 @@ a:visited {
     ". . . .";
 }
 
-@media screen and (max-width: 600px) {
-  .header {
-    height: 17vh;
-  }
-}
 
 #add_btn {
   background-color: #f4511e;
@@ -238,4 +234,10 @@ a:visited {
   border-color: black;
   background-color: white;
   color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: 17vh;
+  }
 }
