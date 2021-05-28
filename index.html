@@ -15,13 +15,18 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
-
+    <script
+      src="https://kit.fontawesome.com/f20e2a656e.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <div class="header main_style" id="header_container">
       <div id="title_area">
-        <h1 class="title_text">Build Your Own Brewery Tour!</h1>
+        <h1 class="title_text">
+          <i class="fas fa-beer"></i>Build Your Own Brewery Tour!
+        </h1>
       </div>
       <div id="nav_area">
         <div class="navItem"><a href="./index.html">Home</a></div>
@@ -29,25 +34,25 @@
         <div class="navItem"><a href="./contact.html">Contact</a></div>
       </div>
     </div>
-
+    <h2 id="title">Search Breweries Near Your Destination</h2>
     <div class="Search" id="form_container">
       <form id="myForm">
         <input
           type="search"
           name="state"
           id="state"
-          placeholder="State"
+          placeholder="Enter State"
           required
         />
         <input
           type="search"
           name="city"
           id="city"
-          placeholder="City"
+          placeholder="Enter City"
           required
         />
       </form>
-      <h2 id="title">Breweries near destination</h2>
+      <button id="tourCreator">Save Your Tour</button>
     </div>
     <div id="main_container" class="main_style">
       <div id="tour_container"></div>
